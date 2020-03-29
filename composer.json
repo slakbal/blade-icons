@@ -1,0 +1,49 @@
+{
+    "name": "driesvints/blade-heroicons",
+    "description": "A package to easily make use of Heroicons in your Laravel Blade views.",
+    "keywords": [
+        "Blade",
+        "Heroicons",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/driesvints/blade-heroicons",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dries Vints",
+            "email": "dries@vints.io",
+            "homepage": "https://driesvints.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dries\\Heroicons\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dries\\Heroicons\\BladeHeroiconsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
