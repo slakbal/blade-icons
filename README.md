@@ -24,7 +24,7 @@ Icons can be used a self-closing Blade components which will be compiled to SVG 
 You can also pass classes to your icon components:
 
 ```blade
-<x:icon-o-adjustments class="w-6 h-6 text-gray-500" />
+<x:icon-o-adjustments class="w-6 h-6 text-gray-500"/>
 ```
 
 The solid icons can be referenced like this:
