@@ -13,7 +13,7 @@ A package to easily make use of [Heroicons](https://github.com/refactoringui/her
 composer require driesvints/blade-heroicons
 ```
 
-### Usage
+## Usage
 
 Icons can be used a self-closing Blade components which will be compiled to SVG icons:
 
@@ -33,6 +33,6 @@ The solid icons can be referenced like this:
 <x:icon-s-adjustments/>
 ```
 
-### License
+## License
 
 The MIT License. Please see [the license file](LICENSE.md) for more information.
