@@ -20,7 +20,7 @@ Heroicons originally made by [Steve Schoger](https://twitter.com/steveschoger) a
 composer require driesvints/blade-heroicons
 ```
 
-### Updating
+## Updating
 
 When updating the package always remember to clear your views:
 
