@@ -1,6 +1,13 @@
 # Blade Heroicons
 
-A package to easily make use of [Heroicons](https://github.com/refactoringui/heroicons) in your Laravel Blade views.
+<a href="https://github.com/driesvints/blade-heroicons/actions"><img src="https://github.com/driesvints/blade-heroicons/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/driesvints/blade-heroicons"><img src="https://poser.pugx.org/driesvints/blade-heroicons/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/driesvints/blade-heroicons"><img src="https://poser.pugx.org/driesvints/blade-heroicons/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/driesvints/blade-heroicons"><img src="https://poser.pugx.org/driesvints/blade-heroicons/license.svg" alt="License"></a>
+
+A package to easily make use of Heroicons in your Laravel Blade views.
+
+Heroicons originally made by [Steve Schoger](https://twitter.com/steveschoger) and [Adam Wathan](https://twitter.com/adamwathan). For a full list of icons, see [the original Heroicons repository](https://github.com/refactoringui/heroicons).
 
 ## Requirements
 
@@ -11,6 +18,14 @@ A package to easily make use of [Heroicons](https://github.com/refactoringui/her
 
 ```bash
 composer require driesvints/blade-heroicons
+```
+
+### Updating
+
+When updating the package always remember to clear your views:
+
+```bash
+php artisan view:clear
 ```
 
 ## Usage
@@ -33,6 +48,10 @@ The solid icons can be referenced like this:
 <x:icon-s-adjustments/>
 ```
 
+## Changelog
+
+Check out the [CHANGELOG](CHANGELOG.md) in this repository for all the recent changes.
+
 ## License
 
-The MIT License. Please see [the license file](LICENSE.md) for more information.
+Blade Heroicons is open-sourced software licensed under [the MIT license](LICENSE.md).
