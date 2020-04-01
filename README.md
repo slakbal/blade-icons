@@ -28,6 +28,12 @@ When updating the package always remember to clear your views:
 php artisan view:clear
 ```
 
+And if you published the raw SVG icons, remember to republish them using:
+
+```bash
+php artisan vendor:publish --tag=heroicons --force
+```
+
 ## Usage
 
 Icons can be used a self-closing Blade components which will be compiled to SVG icons:
@@ -46,6 +52,20 @@ The solid icons can be referenced like this:
 
 ```blade
 <x:icon-s-adjustments/>
+```
+
+### Raw SVG Icons
+
+If you want to use the raw SVG icons as assets, you can publish them using:
+
+```bash
+php artisan vendor:publish --tag=heroicons --force
+```
+
+Then use them in your views like:
+
+```blade
+<img src="{{ asset('vendor/heroicons/icon-o-adjustments.svg') }}" width="10" height="10"/>
 ```
 
 ## Changelog

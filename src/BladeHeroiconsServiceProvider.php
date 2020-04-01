@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dries\Heroicons;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class BladeHeroiconsServiceProvider extends ServiceProvider
+final class BladeHeroiconsServiceProvider extends ServiceProvider
 {
     private const ICONS = [
         'adjustments',
@@ -160,7 +162,7 @@ class BladeHeroiconsServiceProvider extends ServiceProvider
         'zoom-out',
     ];
 
-    public function boot()
+    public function boot(): void
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'heroicons');
 
@@ -168,5 +170,11 @@ class BladeHeroiconsServiceProvider extends ServiceProvider
             Blade::component("heroicons::components.outline-md.md-$icon", "icon-o-$icon");
             Blade::component("heroicons::components.solid-sm.sm-$icon", "icon-s-$icon");
         });
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../resources/images' => public_path('vendor/heroicons'),
+            ], 'heroicons');
+        }
     }
 }
