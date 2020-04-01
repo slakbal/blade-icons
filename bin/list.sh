@@ -2,15 +2,19 @@
 
 set -e
 
-# Lists all the icon names for the array in BladeHeroiconsServiceProvider...
+#[ -d "$1" ] || exit
 
-HEROICONS=$(cd `dirname $0` && pwd)/../resources/heroicons
+# Lists all the icons names for the array in BladeIconsServiceProvider...
 
-for file in $HEROICONS/outline-md/*; do
-  filename=${file##*/}
+TYPE=$1
+ICONS=$(cd `dirname $0` && pwd)/../resources/images/$TYPE
+LENGTH=$(expr $(echo -n $TYPE | wc -m) + 1)
+
+for FILE in $ICONS/*; do
+  FILENAME=${FILE##*/}
 
   NAME="'"
-  NAME+=$(echo ${filename} | cut -f 1 -d '.' | cut -c 4-)
+  NAME+=$(echo ${FILENAME} | cut -f 1 -d '.' | cut -c $LENGTH-)
   NAME+="',"
 
   echo $NAME

@@ -1,12 +1,13 @@
 {
-    "name": "driesvints/blade-heroicons",
-    "description": "A package to easily make use of Heroicons in your Laravel Blade views.",
+    "name": "driesvints/blade-icons",
+    "description": "A package to easily make use of icons in your Laravel Blade views.",
     "keywords": [
         "Blade",
         "Heroicons",
+        "Zondicons",
         "Laravel"
     ],
-    "homepage": "https://github.com/driesvints/blade-heroicons",
+    "homepage": "https://github.com/driesvints/blade-icons",
     "license": "MIT",
     "authors": [
         {
@@ -26,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dries\\Heroicons\\": "src"
+            "Dries\\Icons\\": "src"
         }
     },
     "autoload-dev": {
@@ -40,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dries\\Heroicons\\BladeHeroiconsServiceProvider"
+                "Dries\\Icons\\BladeIconsServiceProvider"
             ]
         }
     },

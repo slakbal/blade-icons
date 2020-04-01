@@ -1,13 +1,15 @@
-# Blade Heroicons
+# Blade Icons
 
-<a href="https://github.com/driesvints/blade-heroicons/actions"><img src="https://github.com/driesvints/blade-heroicons/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/driesvints/blade-heroicons"><img src="https://poser.pugx.org/driesvints/blade-heroicons/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/driesvints/blade-heroicons"><img src="https://poser.pugx.org/driesvints/blade-heroicons/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/driesvints/blade-heroicons"><img src="https://poser.pugx.org/driesvints/blade-heroicons/license.svg" alt="License"></a>
+<a href="https://github.com/driesvints/blade-icons/actions"><img src="https://github.com/driesvints/blade-icons/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/driesvints/blade-icons"><img src="https://poser.pugx.org/driesvints/blade-icons/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/driesvints/blade-icons"><img src="https://poser.pugx.org/driesvints/blade-icons/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/driesvints/blade-icons"><img src="https://poser.pugx.org/driesvints/blade-icons/license.svg" alt="License"></a>
 
-A package to easily make use of Heroicons in your Laravel Blade views.
+A package to easily make use of icons in your Laravel Blade views. Heroicons and Zondicons originally made by [Steve Schoger](https://twitter.com/steveschoger) and [Adam Wathan](https://twitter.com/adamwathan).
 
-Heroicons originally made by [Steve Schoger](https://twitter.com/steveschoger) and [Adam Wathan](https://twitter.com/adamwathan). For a full list of icons, see [the original Heroicons repository](https://github.com/refactoringui/heroicons).
+Full list of icons:
+- [Heroicons](resources/images/heroicons)
+- [Zondicons](resources/images/zondicons)
 
 ## Requirements
 
@@ -17,41 +19,42 @@ Heroicons originally made by [Steve Schoger](https://twitter.com/steveschoger) a
 ## Installation
 
 ```bash
-composer require driesvints/blade-heroicons
+composer require driesvints/blade-icons
 ```
 
 ## Updating
 
-When updating the package always remember to clear your views:
+General steps for every update:
 
-```bash
-php artisan view:clear
-```
+- Run `php artisan view:clear`
+- If you published the raw icons run `php artisan vendor:publish --tag=blade-icons --force`
 
-And if you published the raw SVG icons, remember to republish them using:
-
-```bash
-php artisan vendor:publish --tag=heroicons --force
-```
+When upgrading to a new major version of the library, remember to read [`the upgrade guide`](UPGRADE.md).
 
 ## Usage
 
 Icons can be used a self-closing Blade components which will be compiled to SVG icons:
 
 ```blade
-<x:icon-o-adjustments/>
+<x:heroicon-o-adjustments/>
 ```
 
 You can also pass classes to your icon components:
 
 ```blade
-<x:icon-o-adjustments class="w-6 h-6 text-gray-500"/>
+<x:heroicon-o-adjustments class="w-6 h-6 text-gray-500"/>
 ```
 
 The solid icons can be referenced like this:
 
 ```blade
-<x:icon-s-adjustments/>
+<x:heroicon-s-adjustments/>
+```
+
+Zondicon icons can be referenced like:
+
+```blade
+<x:zondicon-add-outline/>
 ```
 
 ### Raw SVG Icons
@@ -59,13 +62,19 @@ The solid icons can be referenced like this:
 If you want to use the raw SVG icons as assets, you can publish them using:
 
 ```bash
-php artisan vendor:publish --tag=heroicons --force
+php artisan vendor:publish --tag=blade-icons --force
 ```
 
 Then use them in your views like:
 
 ```blade
-<img src="{{ asset('vendor/heroicons/icon-o-adjustments.svg') }}" width="10" height="10"/>
+<img src="{{ asset('vendor/blade-icons/heroicons/heroicon-o-adjustments.svg') }}" width="10" height="10"/>
+```
+
+And use zondicons like: 
+
+```blade
+<img src="{{ asset('vendor/blade-icons/zondicons/zondicon-add-outline.svg') }}" width="10" height="10"/>
 ```
 
 ## Changelog
