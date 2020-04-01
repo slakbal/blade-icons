@@ -10,6 +10,7 @@ HEROICONS=$RESOURCES/heroicons
 IMAGES=$RESOURCES/images
 COMPONENTS=$RESOURCES/views/components
 
+# Compile outline icons...
 for file in $HEROICONS/outline-md/*; do
   filename=${file##*/}
   destinationName=$(echo ${filename} | cut -c 4-)
@@ -20,6 +21,7 @@ for file in $HEROICONS/outline-md/*; do
   sed -i '' "1s/.*/$FIRST_LINE/" $IMAGES/icon-o-${destinationName}
 done
 
+# Compile solid icons...
 for file in $HEROICONS/solid-sm/*; do
   filename=${file##*/}
   destinationName=$(echo ${filename} | cut -c 4-)
@@ -30,6 +32,7 @@ for file in $HEROICONS/solid-sm/*; do
   sed -i '' "1s/.*/$FIRST_LINE/" $IMAGES/icon-s-${destinationName}
 done
 
+# Compile raw outline icons...
 for file in $HEROICONS/outline-md/*; do
   filename=${file##*/}
   destinationName=$(echo ${filename} | cut -f 1 -d '.' | cut -c 4-)
@@ -40,6 +43,7 @@ for file in $HEROICONS/outline-md/*; do
   sed -i '' "1s/.*/$FIRST_LINE/" $COMPONENTS/icon-o-${destinationName}.blade.php
 done
 
+# Compile raw solid icons...
 for file in $HEROICONS/solid-sm/*; do
   filename=${file##*/}
   destinationName=$(echo ${filename} | cut -f 1 -d '.' | cut -c 4-)
