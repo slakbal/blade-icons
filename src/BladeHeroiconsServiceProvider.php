@@ -167,8 +167,8 @@ final class BladeHeroiconsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'heroicons');
 
         collect(self::ICONS)->each(function (string $icon) {
-            Blade::component("heroicons::components.outline-md.md-$icon", "icon-o-$icon");
-            Blade::component("heroicons::components.solid-sm.sm-$icon", "icon-s-$icon");
+            Blade::component("heroicons::components.icon-o-$icon", "icon-o-$icon");
+            Blade::component("heroicons::components.icon-s-$icon", "icon-s-$icon");
         });
 
         if ($this->app->runningInConsole()) {

@@ -32,22 +32,22 @@ done
 
 for file in $HEROICONS/outline-md/*; do
   filename=${file##*/}
-  name=$(echo ${filename} | cut -f 1 -d '.')
+  destinationName=$(echo ${filename} | cut -f 1 -d '.' | cut -c 4-)
 
-  cp $HEROICONS/outline-md/${name}.svg $COMPONENTS/outline-md/${name}.blade.php
+  cp $HEROICONS/outline-md/${filename} $COMPONENTS/icon-o-${destinationName}.blade.php
 
   FIRST_LINE='<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="{{ $class ?? null }}">'
-  sed -i '' "1s/.*/$FIRST_LINE/" $COMPONENTS/outline-md/${name}.blade.php
+  sed -i '' "1s/.*/$FIRST_LINE/" $COMPONENTS/icon-o-${destinationName}.blade.php
 done
 
 for file in $HEROICONS/solid-sm/*; do
   filename=${file##*/}
-  name=$(echo ${filename} | cut -f 1 -d '.')
+  destinationName=$(echo ${filename} | cut -f 1 -d '.' | cut -c 4-)
 
-  cp $HEROICONS/solid-sm/${name}.svg $COMPONENTS/solid-sm/${name}.blade.php
+  cp $HEROICONS/solid-sm/${filename} $COMPONENTS/icon-s-${destinationName}.blade.php
 
   FIRST_LINE='<svg viewBox="0 0 20 20" fill="currentColor" class="{{ $class ?? null }}">'
-  sed -i '' "1s/.*/$FIRST_LINE/" $COMPONENTS/solid-sm/${name}.blade.php
+  sed -i '' "1s/.*/$FIRST_LINE/" $COMPONENTS/icon-s-${destinationName}.blade.php
 done
 
 echo "All done!"
