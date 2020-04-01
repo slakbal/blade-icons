@@ -25,7 +25,7 @@ for FILE in $RESOURCES/heroicons/outline-md/*; do
 
   cp $FILE $BLADE
 
-  FIRST_LINE='<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="{{ $class ?? null }}">'
+  FIRST_LINE='<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="{{ $class ?? null }}" style="{{ $style ?? null }}">'
   sed -i '' "1s/.*/$FIRST_LINE/" $BLADE
 done
 
@@ -45,7 +45,7 @@ for FILE in $RESOURCES/heroicons/solid-sm/*; do
 
   cp $FILE $BLADE
 
-  FIRST_LINE='<svg viewBox="0 0 20 20" fill="currentColor" class="{{ $class ?? null }}">'
+  FIRST_LINE='<svg viewBox="0 0 20 20" fill="currentColor" class="{{ $class ?? null }}" style="{{ $style ?? null }}">'
   sed -i '' "1s/.*/$FIRST_LINE/" $BLADE
 done
 
@@ -67,7 +67,7 @@ for FILE in $RESOURCES/zondicons/*; do
 
   cp $FILE $DESTINATION
 
-  CLASS='<svg fill="currentColor" class="{{ $class ?? null }}"'
+  CLASS='<svg fill="currentColor" class="{{ $class ?? null }}" style="{{ $style ?? null }}"'
   sed -i '' "s/<svg/$CLASS/" $DESTINATION
 done
 
